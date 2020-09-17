@@ -43,12 +43,9 @@ public class WordCount {
 
         // Split the text by the following pattern
         //     Zero or more of the following characters: \s \n . , ! ? ; : < > { } ( ) [ ] " '
-        //     Followed by either of the two:
-        //          Atleast one space
-        //          Atleast one of the following characters:
-        //              <> { } ( ) [ ] " '
-
-        scanIn.useDelimiter("[\\s\\n.,!?;:<>\\{\\}\\(\\)\\[\\]\"\']*(\\s+|[<>\\{\\}\\(\\)\\[\\]\"\']+)");
+        //     Followed atleast one of the following characters:
+        //          \s \n <> { } ( ) [ ] " '
+        scanIn.useDelimiter("[\\s\\n.,!?;:<>\\{\\}\\(\\)\\[\\]\"\']*[\\s\\n<>\\{\\}\\(\\)\\[\\]\"\']+");
 
         // While there is another word in the file
         while (scanIn.hasNext()) {

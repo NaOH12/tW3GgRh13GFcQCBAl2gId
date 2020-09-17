@@ -1,0 +1,10 @@
+This implementation of word count makes use of the Scanner delimiter to split words.
+The delimiter pattern splits text such as "hello? 'hello'" into the words: hello hello
+
+An assumption is made that the text is gramatically correct.
+
+This project was created in VSCode with the Java Extension Pack
+https://code.visualstudio.com/docs/languages/java
+
+Test files are included which test the program on the given example, extreme 
+punctuation examples, and numbers.
