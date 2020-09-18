@@ -3,8 +3,10 @@ The delimiter pattern splits text such as "hello? 'hello'" into the words: hello
 
 An assumption is made that the text is gramatically correct.
 
-This project was created in VSCode with the Java Extension Pack
+This maven project was created in VSCode with the Java Extension Pack
 https://code.visualstudio.com/docs/languages/java
 
-Test files are included which test the program on the given example, extreme 
-punctuation examples, and numbers.
+For eclipse, simply select open project and then the project directory.
+
+Test files are included which test the program on the given example, an empty file,
+extreme punctuation examples, and numbers.
