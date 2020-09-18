@@ -98,21 +98,29 @@ public class WordCount {
                 lengths.add(pair.getKey());
             }
         }
-        // Finally divide the total by the word count to get an average
-        averageWordLength/= wordCount;
 
-        // Add extra statistics to the message
-        out = "Average word length = " + (new DecimalFormat("0.000")).format(averageWordLength) + "\n" + out;
-        out = "Word count = " + wordCount + "\n" + out;
-        out+= "The most frequently occurring word length is " + maxFrequency + ", for word lengths of ";
+        // If the word count is empty
+        if (wordCount == 0) {
+            out = "Word count = 0\nAverage word length = 0.000\n";
+        } else {
+            // If the word count isnt empty then create report
 
-        // For each word length with the same max frequency
-        for (int i = 0; i < lengths.size() - 1; i++) {
-            // Append to the return message
-            out+= lengths.get(i) + " & ";
+            // Finally divide the total by the word count to get an average
+            averageWordLength/= wordCount;
+
+            // Add extra statistics to the message
+            out = "Average word length = " + (new DecimalFormat("0.000")).format(averageWordLength) + "\n" + out;
+            out = "Word count = " + wordCount + "\n" + out;
+            out+= "The most frequently occurring word length is " + maxFrequency + ", for word lengths of ";
+
+            // For each word length with the same max frequency
+            for (int i = 0; i < lengths.size() - 1; i++) {
+                // Append to the return message
+                out+= lengths.get(i) + " & ";
+            }
+            // Append last length (without the &)
+            out+= lengths.get(lengths.size()-1) + "\n";
         }
-        // Append last length (without the &)
-        out+= lengths.get(lengths.size()-1) + "\n";
 
         // Return the message
         return out;
